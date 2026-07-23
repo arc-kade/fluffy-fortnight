@@ -79,4 +79,5 @@ for i in range(n):
         if j<=i:
             print("*",end=" ")
     print()
-    
+
+        
