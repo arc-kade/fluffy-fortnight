@@ -71,13 +71,24 @@
 #     print()
 #     k+=1
 
-n=int(input("Enter a number (diamond): "))
+# n=int(input("Enter a number (diamond): "))
+# for i in range(n):
+#     print(" "*(n-i),end="")
+#     for j in range(n):
+#         if j<=i:
+#             print("*",end=" ")
+#     print()
+# for i in range(n-1,0,-1):
+#     print(" "*(n-(i-1)),end="")
+#     for j in range(n-1,0,-1):
+#         if j<=i:
+#             print("*",end=" ") 
+#     print()
 
+n=int(input("Enter a number (left half pyramid): "))
 for i in range(n):
-    print(" "*(n-i),end="")
+    print(" "*(n),end="")
     for j in range(n):
-        if j<=i:
+        if j>=i:
             print("*",end=" ")
     print()
-
-        

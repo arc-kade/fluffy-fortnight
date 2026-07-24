@@ -46,10 +46,17 @@ b=len(a)
 #         col+=1
 #     print()
 #     row+=1
-while True:
-    a=int(input("Enter your first number : "))
-    b=int(input("Enter your second number : "))
+# while True:
+#     a=int(input("Enter your first number : "))
+#     b=int(input("Enter your second number : "))
     
-    print(c)
-    if a == 0:
-        break
+#     print(c)
+#     if a == 0:
+#         break
+# a=10
+# b=20
+# c=30
+# print("a=",a," b=",b," c=",c)
+# print("a={} b={} c={}".format(c,b,a))
+# print(f"a={a} b={b} c={c}")
+
