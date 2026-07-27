@@ -88,7 +88,7 @@
 n=int(input("Enter a number (left half pyramid): "))
 for i in range(n):
     print(" "*(n),end="")
-    for j in range(n):
-        if j>=i:
+    for j in range(i):
+        if j<=i:
             print("*",end=" ")
     print()
