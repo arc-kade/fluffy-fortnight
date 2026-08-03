@@ -69,3 +69,37 @@
         
 # print(reverse(s))
 
+# A recursive to find the power (base^exponent)
+# def power(b,e):
+#     if e==0:
+#         return 1
+#     else:
+#         return b* power(b,e-1)
+        
+        
+# a=int(input("Enter the base: "))
+# b=int(input("Enter the exponent: "))
+# c=power(a,b)
+# print(c)
+# print(a**b)
+
+#A lambda function to find the square of a number
+# x= int(input("Enter a number to output square: "))
+# square = lambda x: x*x
+# print(square(x))
+
+#A lambda function to find the largest of 2 numbers
+# m=int(input("Enter a number: "))
+# n=int(input("Enter another number: "))
+# larger= lambda a,b: a if a>b else b #no need for return function
+# print(f"{larger(m,n)} is larger")
+
+#A lambda function to filter only the even numbers in a list
+# numbers=[1,2,3,4,5,6,7,8]
+# filter = list(filter(lambda x:x%2==0,numbers))
+# print(filter)
+
+#A lambda function to map the squares of numbers in the list
+# numbers=[1,2,3,4,5,6,7,8]
+# squares = list(map(lambda x:x%2==0,numbers))
+# print(squares)
