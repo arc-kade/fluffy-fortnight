@@ -1,0 +1,8 @@
+bank management system
+menu
+1.create account (name,age,phone number, initial deposit)
+2.deposit money
+3.withdraw money
+4.delete account
+5.view account
+6.exit
