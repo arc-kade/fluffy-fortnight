@@ -25,7 +25,7 @@ while True:
             print(f"\nBank account created.\nName:{name}\nAge:{age}\nPhone number:{phone}\nBalance:{balance}\n")
         # print(bank.keys())
         # print(bank)
-        # print(account)
+        print(account)
         continue
 
     if option==2:
