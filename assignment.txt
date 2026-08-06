@@ -6,3 +6,8 @@ menu
 4.delete account
 5.view account
 6.exit
+
+
+Data abstraction seminar:
+theory and practical (show code)
+activity work
