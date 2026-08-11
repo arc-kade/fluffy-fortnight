@@ -1,11 +1,26 @@
-#abstract base class
+# #abstract base class
+from abc import ABC, abstractmethod
+
+class Greet(ABC):
+    @abstractmethod
+    def say_hello(self):
+        pass  # Abstract method
+
+class English(Greet):
+    def say_hello(self):
+        return "Hello!"
+
+g = English()
+print(g.say_hello())
+
+#absract method
 from abc import ABC, abstractmethod
 class Animal(ABC):
     @abstractmethod
     def make_sound(self):
         pass  # Abstract method, no implementation here
 
-#absract method
+# Concrete method
 from abc import ABC, abstractmethod
 
 class Animal(ABC):
@@ -20,10 +35,16 @@ class Dog(Animal):
     def make_sound(self):
         return "Bark"
 
-dog = Dog()
-print(dog.move())
+class Cat(Animal):
+    def make_sound(self):
+        return "Meow"
 
-# Concrete method
+dog = Dog()
+print(dog.make_sound())
+cat = Cat()
+print(cat.make_sound())
+
+# Abstract properties
 from abc import ABC, abstractmethod
 
 class Animal(ABC):
@@ -41,7 +62,8 @@ class Dog(Animal):
 dog = Dog()
 print(dog.species)
 
-# Abstract properties
+# Self instantiation
+
 from abc import ABC, abstractmethod
 
 class Animal(ABC):

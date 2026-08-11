@@ -139,7 +139,61 @@
 # p.cat_sound()
 # p.play()
 
-class Person:
+# class Person:
+#     def __init__(self,name,age):
+#         self.name = name 
+#         self.age = age
+#         print("Person constructor")
+#     def details(self):
+#         print("Name: ",self.name)
+#         print("Age: ",self.age)
+
+# class Student(Person):
+#     def branch(self):
+#         print("Branch: Computer science")
+
+# s = Student("Robert",20)
+# s.details()
+# s.branch()
+
+# class Employee:
+#     def __init__(self,name,salary):
+#         self.name=name
+#         self.salary=salary
+#     def emp(self):
+#         print(f"Name: {self.name}\nSalary: {self.salary}")
+
+# class Manager(Employee):
+#     def branch(self):
+#         print("Department: Aluva")
+
+# e = Manager("Nikhil",45000)
+# e.emp()
+# e.branch()
+
+class Person():
     def __init__(self,name):
         self.name = name
-        
+
+    def per(self):
+        print("Name: ", self.name)
+
+class Employee(Person):
+    def __init__(self, name,employee_id):
+        super().__init__(name)
+        self.employee_id=employee_id
+    def emp(self):
+        print("Employee ID:", self.employee_id)
+
+class Manager(Employee):
+    def __init__(self, name, employee_id,department):
+        super().__init__(name, employee_id)
+        self.department = department
+
+    def man(self):
+        print("Department:",self.department)
+
+m=Manager("Ashwin", 65000, "HR")
+m.per()
+m.emp()
+m.man()
