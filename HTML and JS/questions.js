@@ -39,3 +39,19 @@ else if(marks >= 55){
 else{
     console.log("Grade: F")
 }
+
+if (age >=12){
+    console.log("Child")
+}
+else if (age>18){
+    console.log("Teenager")
+}
+else if (age > 60){
+    console.log("Adult")
+}
+else if (age <0){
+    console.log("Impossible")
+}
+else{
+    console.log("Senior citizen")
+}
