@@ -55,3 +55,20 @@ else if (age <0){
 else{
     console.log("Senior citizen")
 }
+
+let usage = 200
+if (usage < 160){
+    console.log("Low usage")
+}
+else if (usage < 400){
+    console.log("Medium usage")
+}
+else if (usage<600){
+    console.log("High usage")
+}
+else if (usage<0){
+    console.log("You are somehow supplying electricity")
+}
+else{
+    console.log("Very high usage")
+}
