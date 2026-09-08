@@ -14,3 +14,13 @@ console.log(sepNumbers)
 let fruits = ["apple","banana","kiwi","pear","avocado"]
 fruits.splice(2,1,"orange")
 console.log(fruits)
+for (i=0;i<numbers.length;i++){
+    console.log(numbers[i])
+}
+let studentNames = ["Alice", "Bob", "Charlie", "David", "Emma"];
+studentNames.forEach(students=>console.log(students))
+fruits.forEach(fruit=>{
+    if(fruit.length>5){
+        console.log(fruit)
+    }
+})
