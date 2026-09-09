@@ -38,4 +38,5 @@ input.addEventListener("input",(event)=>{
     console.log(event.target.value)
 })
 
-// const addItem=document.getElementById()
+const addItem=document.getElementById("addItems")
+// input.addEventListener=
