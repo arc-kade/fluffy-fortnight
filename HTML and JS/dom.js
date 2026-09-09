@@ -37,3 +37,5 @@ const input=document.getElementById("username")
 input.addEventListener("input",(event)=>{
     console.log(event.target.value)
 })
+
+// const addItem=document.getElementById()

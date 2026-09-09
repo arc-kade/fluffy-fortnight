@@ -24,3 +24,8 @@ fruits.forEach(fruit=>{
         console.log(fruit)
     }
 })
+numbers=[3,4,9,10,66,45,80]
+numbers.forEach(bigNumbers=>{
+    if(numbers>50){}
+    }
+)
