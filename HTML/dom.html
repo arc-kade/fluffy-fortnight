@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Demo</title>
+    <style>
+        #box2{
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .box{
+            width: 200px;
+            padding: 30px;
+            background-color: lightgreen;
+        }
+        .highlight{
+            background-color: yellow;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Welcome</h1>
+    <p id="p1">This is paragraph 1</p>
+    <!-- <p class="box">This is paragraph 2</p> -->
+    <ul>
+        <li>Mango</li>
+        <li>Apple</li>
+        <li>Banana</li>
+    </ul>
+    <h1 id="title1">Hello World</h1>
+    <div id="content"></div>
+    <div>
+        <a id="myLink" href="https://example.com">Visit to website</a>
+    </div>
+    <div class="box" id="mybox">This is a box</div>
+    <input type="text" id="addItems" placeholder="Enter the item">
+    <button id="addButton">Add Item</button>
+    <ul id="itemList">
+        <li>Mango</li>
+        <li>Apple</li>
+    </ul>
+    <button id="myButton">Click Me</button>
+    <div id="box2">Mouse Hover</div>
+    <input type="text" id="username" placeholder="Enter your name">
+    
+    <script src="dom.js"></script>
+</body>
+</html>
