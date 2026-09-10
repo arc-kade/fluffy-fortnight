@@ -19,11 +19,20 @@ const box = document.getElementById("mybox")
 // box.classList.add("highlight")
 box.classList.remove("box")
 
-const button=document.getElementById("addButton")
-button.addEventListener("click",()=>{
-    const newItem=document.createElement("li")
-    newItem.innerText="newItem"
-    document.querySelector("#itemList").appendChild(newItem)
+
+const button2=document.getElementById("addButton")
+const addItem=document.getElementById("addItems")
+
+// addItem.addEventListener("input",()=>{
+//     console.log(event.target.value)
+// })
+button2.addEventListener("click",()=>{
+    // const newItem=document.createElement("li")
+    // newItem.innerText="new   Item"
+    // document.querySelector("#itemList").appendChild(newItem)
+    const addItems=document.createElement("li")
+    addItems.innerText=addItem.value
+    document.querySelector("#itemList").appendChild(addItems)
 })
 const button1=document.getElementById("myButton")
 button1.addEventListener("click",()=>{
@@ -38,5 +47,3 @@ input.addEventListener("input",(event)=>{
     console.log(event.target.value)
 })
 
-const addItem=document.getElementById("addItems")
-// input.addEventListener=

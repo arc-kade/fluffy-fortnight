@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <title>Calc</title>
+</head>
+<body>
+    <button onclick="getName()">Enter name</button>
+    <button onclick="addNumbers()">Add numbers</button>
+    <h2 id="result"></h2>
+    <h6 id="total"></h6>
+    <input type="number" id="num1" placeholder="Enter your numbers">
+    <br>
+    <br>
+    <input type="number" id="num2" placeholder="Enter your second number">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col">
+            <!-- <button onclick="seven()">7</button>
+            <button onclick="eight()">8</button>
+            <button onclick="nine()">9</button> -->
+            <button onclick="multiply()">x</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <!-- <button onclick="four()">4</button>
+            <button onclick="five()">5</button>
+            <button onclick="six()">6</button> -->
+            <button onclick="subtract()">-</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <!-- <button onclick="one()">1</button>
+            <button onclick="two()">2</button>
+            <button onclick="three()">3</button> -->
+            <button onclick="add()">+</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <br>
+            <!-- <button onclick="zero()">0</button>
+            <button onclick="point()">.</button> -->
+            <button onclick="divide()">/</button>
+            <button onclick="equal()">=</button>
+        </div>
+    </div>
+        <!-- <button onclick="sum()">=</button> -->
+    
+    <p id="result1"></p>
+    <script src="fresh.js"></script>
+</body>
+</html>
