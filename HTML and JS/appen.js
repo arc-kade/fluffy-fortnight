@@ -27,3 +27,14 @@ fetch("https://jsonplaceholder.typicode.com/posts")
         console.error("Error:", error);
 
     });
+
+let counter =5
+const display=document.getElementById("counter")
+const interval=setInterval(()=>{
+    display.innerText=counter
+    counter--
+    if(counter<0){
+        clearInterval(interval)
+        display.innerText="Time's up"
+    }
+},1000)

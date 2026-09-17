@@ -5,6 +5,7 @@ import viteLogo from './assets/vite.svg'
 // import './App.css'
 import Multiple from './basic.jsx'
 import FullName from './name.jsx'
+import Car from './objects.jsx'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -12,6 +13,7 @@ function App() {
     <>
       {/* <Multiple /> */}
       <FullName />
+      <Car />
     </>
   )
 }

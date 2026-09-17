@@ -1,0 +1,10 @@
+npm create vite@latest (create the first project on react)
+    y/n
+    <project name>
+    framework -> react
+    react variant -> JS + react compiler or javascript
+    OSN
+    npm with react download
+    cd <project name>
+    install dependencies -> npm install 
+    start the dev server -> npm run dev
