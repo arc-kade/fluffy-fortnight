@@ -8,3 +8,5 @@ npm create vite@latest (create the first project on react)
     cd <project name>
     install dependencies -> npm install 
     start the dev server -> npm run dev
+
+npm install bootstrap -> installs bootstrap
