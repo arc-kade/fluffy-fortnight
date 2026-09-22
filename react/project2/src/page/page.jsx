@@ -5,6 +5,10 @@ import Button from "../component/button.jsx";
 import ClickExample from "../component/anything.jsx";
 import InputExample from "../component/inputexample.jsx";
 import GreetingButton from "../component/greetingbutton.jsx";
+import Item from "../component/item.jsx";
+import ProductList from "./productlist.jsx";
+import Counter from "./usercount.jsx";
+import ColorList from "./color.jsx";
 function Page(){
     function handleSubmit(){
         alert("Submit button clicked")
@@ -26,9 +30,13 @@ function Page(){
                 <Button label = "Save" type = "btn-success" onClick = {handleSave}/>
                 
             </main>
+            <Item />
+            <ProductList />
             <ClickExample />
             <InputExample />
             <GreetingButton />
+            <Counter />
+            <ColorList />
             <Footer />
         </div>
     )

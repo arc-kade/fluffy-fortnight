@@ -7,6 +7,8 @@ import Usercard from './userCard.jsx'
 import Page from './page/page.jsx'
 import Landing from './page/landing.jsx'
 import Landing2 from './page/landing2.jsx'
+import ParentComponent from './page/parentcomponent.jsx'
+import DataFetcher from './page/data.jsx'
 // import './App.css'
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
       <Simple name = "Perman" age = '12'/> */}
       {/* <Usercard name = "Abilash" age = "23" phone = "1234567890" dep = "CS"/> */}
       {/* <Page /> */}
+      <ParentComponent />
       <Landing2 />
+      <DataFetcher />
     </>
   )
 }
