@@ -1,12 +1,14 @@
 import { useState } from "react";
 function colorList(){
     const [color,setColor] = useState("")
+    const [colorName,setColorName] = useState("")
     return(
         <div>
-            <p>Color: {color}</p>
-            <button onClick={()=>setColor("Red")}>Set Red</button>
-            <button onClick={()=>setColor("Blue")}>Set Blue</button>
-            <button onClick={()=>setColor("Green")}>Set Green</button>
+            <p style={{color:color}}>Color: {colorName}</p>
+            <button onClick={()=>{setColorName("Red");setColor("Green");}}>Set Red</button>
+            <button onClick={()=>{setColorName("Green");setColor("Blue");}}>Set Green</button>
+            <button onClick={()=>{setColorName("Blue");setColor("Red");}}>Set Blue</button>
+            
         </div>
     )
 

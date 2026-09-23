@@ -9,6 +9,9 @@ import Item from "../component/item.jsx";
 import ProductList from "./productlist.jsx";
 import Counter from "./usercount.jsx";
 import ColorList from "./color.jsx";
+import UserList from "./userlist.jsx";
+import CalculationDemo from "./calculation.jsx";
+import UserCallDemo from "./usercallback.jsx";
 function Page(){
     function handleSubmit(){
         alert("Submit button clicked")
@@ -21,6 +24,8 @@ function Page(){
     }
     return(
         <div>
+            <UserCallDemo />
+            <CalculationDemo />
             <Header />
             <main>
                 <h2>Welcome to my website!</h2>
@@ -30,6 +35,7 @@ function Page(){
                 <Button label = "Save" type = "btn-success" onClick = {handleSave}/>
                 
             </main>
+            <UserList />
             <Item />
             <ProductList />
             <ClickExample />
