@@ -12,6 +12,7 @@ import ColorList from "./color.jsx";
 import UserList from "./userlist.jsx";
 import CalculationDemo from "./calculation.jsx";
 import UserCallDemo from "./usercallback.jsx";
+import DataFetcher from "./datat.jsx";
 function Page(){
     function handleSubmit(){
         alert("Submit button clicked")
@@ -24,6 +25,7 @@ function Page(){
     }
     return(
         <div>
+            <DataFetcher />
             <UserCallDemo />
             <CalculationDemo />
             <Header />

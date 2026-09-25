@@ -10,3 +10,8 @@ npm create vite@latest (create the first project on react)
     start the dev server -> npm run dev
 
 npm install bootstrap -> installs bootstrap
+npm install axios
+npm install react-router-dom
+
+
+    https://templatemo.com/live/templatemo_628_lumen_eighty
