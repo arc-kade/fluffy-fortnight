@@ -4,7 +4,7 @@ function Landing(){
     return(
         <>
         <Navbar />
-        <h1>This is the landing page. This contains all information in 1 page</h1>
+        <h1>This is the landing page. Welcome in!</h1>
             <Outlet />
        
         </>
