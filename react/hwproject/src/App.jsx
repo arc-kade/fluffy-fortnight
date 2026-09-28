@@ -8,6 +8,7 @@ import Home from './components/home.jsx'
 import About from './components/about.jsx'
 import Services from './components/services.jsx'
 import Help from './components/help.jsx'
+import ProtectedRoute from './page/protectedroute.jsx'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -19,12 +20,14 @@ function App() {
           <Route path = "/" element={<Index />}/>
           <Route path = "/Login" element={<Login />} />
           <Route path='/Register' element={<Register />} />
-          <Route path='/Landing' element={<Landing />}>
+          <Route element={<ProtectedRoute />}>
+            <Route path='/Landing' element={<Landing />}>
             {/* <Route index element={<Landing />} /> */}
             <Route path='home' element={<Home />} />
             <Route path='about' element ={<About />}/>
             <Route path='services' element ={<Services />}/>
             <Route path='help' element ={<Help />}/>
+          </Route>
           </Route>
         </Routes>
       </BrowserRouter>

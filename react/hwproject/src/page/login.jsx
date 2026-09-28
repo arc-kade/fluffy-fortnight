@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import ProtectedRoute from "./protectedroute";
 function Login() {
     const navigate = useNavigate();
     const [username,setUsername] = useState("")
@@ -11,6 +12,7 @@ function Login() {
         const users = JSON.parse(localStorage.getItem("users") || "{}");
         const user = users[username];
         if (user && user.password === password) {
+            localStorage.setItem("isLoggedIn","true");
             navigate("/landing")
         } else {
             setError("Invalid username or password")
