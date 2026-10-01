@@ -3,6 +3,8 @@ import UserContext from './context/UserContext'
 import Header from './component/header'
 import ThemeContext from './context/themecontext'
 import ToolBar from './component/toolbar'
+import Counter from './component/counter'
+import Message from './component/message'
 // import './App.css'
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
       <ThemeContext.Provider value={{theme,setTheme}}>
         <ToolBar />
       </ThemeContext.Provider>
+      <Counter />
+      <Message />
     </>
   )
 }
