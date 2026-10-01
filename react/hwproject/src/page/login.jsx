@@ -13,6 +13,7 @@ function Login() {
         const user = users[username];
         if (user && user.password === password) {
             localStorage.setItem("isLoggedIn","true");
+            localStorage.setItem("currentUser", username)
             navigate("/landing")
         } else {
             setError("Invalid username or password")

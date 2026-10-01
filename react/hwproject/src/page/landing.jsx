@@ -8,6 +8,7 @@ function Landing(){
     console.log("Before:", localStorage.getItem("isLoggedIn"));
 
     localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("currentUser");
 
     console.log("After:", localStorage.getItem("isLoggedIn"));
 
@@ -22,7 +23,7 @@ function Landing(){
         <br />
         <br />
         <br />
-        <StudentForm />
+        <StudentForm key={localStorage.getItem("currentUser")} />
         </>
         
     )
