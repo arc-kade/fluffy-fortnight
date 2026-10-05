@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
-function Register(){
+function Register() {
     const navigate = useNavigate();
-    const [username,setUsername] = useState("")
-    const [password,setPassword] = useState("")
-    const [confirmPassword,setConfirmPassword] = useState("")
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
     const [error, setError] = useState("");
-    
-    const handleRegister = (e)=>{
+
+    const handleRegister = (e) => {
         e.preventDefault()
-        if (password!==confirmPassword){
+        if (password !== confirmPassword) {
             setError("Please re-enter the same password")
             return;
         }
@@ -20,6 +20,11 @@ function Register(){
             setError("Username already taken");
             return;
         }
+        if (username.toLowerCase() === "admin") {
+            setError("That username is reserved");
+            return;
+        }
+        users[username] = { password, role: "user" };
         users[username] = { password };
         localStorage.setItem("users", JSON.stringify(users));
 
