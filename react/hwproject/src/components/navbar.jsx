@@ -9,6 +9,7 @@ function Navbar(){
                 <NavLink to="services" className={({isActive})=>isActive? "active":"" }>Services </NavLink>
                 <NavLink to="about" >About </NavLink>
                 <NavLink to="help" >Help </NavLink>
+                <NavLink to="shopping">Shopping </NavLink>
             </div>
         </nav>
     )

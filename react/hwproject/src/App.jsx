@@ -13,6 +13,7 @@ import AdminLogin from './page/adminlogin.jsx'
 import AdminPage from './page/adminpage.jsx'
 import AdminRoute from './page/adminroute.jsx'
 import AdminRegister from './page/adminregister.jsx'
+import Shopping from './page/shopping.jsx'
 function App() {
   // const [count, setCount] = useState(0)
 
@@ -40,6 +41,7 @@ function App() {
               <Route path='about' element={<About />} />
               <Route path='services' element={<Services />} />
               <Route path='help' element={<Help />} />
+              <Route path='shopping' element={<Shopping />}/>
             </Route>
           </Route>
         </Routes>
