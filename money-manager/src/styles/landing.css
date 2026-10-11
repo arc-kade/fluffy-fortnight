@@ -1,0 +1,299 @@
+/* ---------- layout ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbar-user {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.landing-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.landing-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.landing-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 800px) {
+  .landing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  padding: 20px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+
+.empty {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---------- summary cards ---------- */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--primary);
+}
+
+.summary-card.income {
+  border-left-color: var(--income);
+}
+
+.summary-card.expense {
+  border-left-color: var(--expense);
+}
+
+.summary-label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.summary-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.summary-card.income .summary-value {
+  color: var(--income);
+}
+
+.summary-card.expense .summary-value {
+  color: var(--expense);
+}
+
+.summary-value.negative {
+  color: var(--expense);
+}
+
+/* ---------- transaction form ---------- */
+.tx-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tx-form h2 {
+  margin-bottom: 0;
+}
+
+.type-toggle,
+.filter-tabs {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.type-toggle button,
+.filter-tabs button {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.type-toggle button.active.expense {
+  background: var(--expense);
+  color: #fff;
+}
+
+.type-toggle button.active.income {
+  background: var(--income);
+  color: #fff;
+}
+
+.filter-tabs button.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ---------- transaction list ---------- */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.list-header h2 {
+  margin-bottom: 0;
+}
+
+.tx-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.tx-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.tx-row:last-child {
+  border-bottom: none;
+}
+
+.tx-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.tx-title {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tx-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tag {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.tx-amount {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tx-amount.income {
+  color: var(--income);
+}
+
+.tx-amount.expense {
+  color: var(--expense);
+}
+
+.tx-delete {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+.tx-delete:hover {
+  background: #fee2e2;
+  color: var(--expense);
+}
+
+/* ---------- category breakdown ---------- */
+.breakdown {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.breakdown-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.breakdown-top small {
+  color: var(--muted);
+}
+
+.bar {
+  height: 8px;
+  background: var(--bg);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--expense);
+  border-radius: 999px;
+}
