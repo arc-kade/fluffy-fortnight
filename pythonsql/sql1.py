@@ -11,41 +11,73 @@ def create_connection():
         user = os.getenv("DB_USER", "root"),
         passwd=os.getenv("DB_PASSWORD", "root"),
         database=os.getenv("DB_NAME", "oneteam"),
-        cursorclass=pymysql.cursors.Dictcursor,
-        # autocommit=False
+        cursorclass=pymysql.cursors.DictCursor,
+        autocommit=False
     )
 
 
 # cursor.execute("INSERT INTO courses(course_name,price,duration)VALUES('Data Analytics',35000,'5 months');")
 def addCourse(connection):
-    course = input("Enter the course name: ")
-    price = input("Enter the course price: ")
-    duration = input("Enter the duration: ")
+    course = input("Enter the course name: ").strip()
+    price = input("Enter the course price: ").strip()
+    duration = input("Enter the duration: ").strip()
 
-    cursor.execute(f"INSERT INTO courses(course_name,price,duration)VALUES('{course}','{price}','{duration}');")
+    if not course or not duration:
+        print("Error: Course name and duration cannot be empty.\n")
+        return
 
-    connection.commit()
-    print(f"Course {course} added successfully")
+    try:
+        price = Decimal(price_input)
+    except InvalidOperation:
+        print("Invalid operation. Please enter in number format\n")
+        return
 
-def viewCourse():
+    try:
+        with connection.cursor as cursor:
+            cursor.execute(f"INSERT INTO courses(course_name,price,duration)VALUES('{course}','{price}','{duration}');")
+        connection.commit()
+    except MySQLError as err:
+        connection.rollback()
+        print(f"Database error while adding course {err}")
+
+    # cursor.execute(f"INSERT INTO courses(course_name,price,duration)VALUES('{course}','{price}','{duration}');")
+
+    # connection.commit()
+    # print(f"Course {course} added successfully")
+
+def viewCourse(connection):
     try:
         course_id = int(input("Enter course id: "))
-    except.ValueError:
+    except ValueError:
         print("ERROR: Course ID must be an integer.")
         return
     try:
-        
-        cursor.execute(f"SELECT * FROM courses WHERE id='{course_id}';")
-    print(cursor.fetchone())
+        with connection.cursor as cursor:
+            cursor.execute(f"SELECT * FROM courses WHERE id='{course_id}';")
+            result = cursor.fetchone()
+
+        if result:
+            print(f"\nID: {result['id']}\n")
+            print(f"COURSE NAME: {result['course_name']}\n")
+            print(f"DURATION: {result['duration']}\n")
+            print(f"PRICE: {result['price']}\n")
+
+        else:
+            print(f"No course found with ID {course_id}.\n")
+
+    except MySQLError as err:
+            print(f"Database error: {err}\n")
 
 def updateCourse(connection):
-    course_id = int(input("Enter course id: "))
-    newName = input("Enter the new name for the course: ")
-    newPrice= float(input("Enter the new price: "))
-    newDuration = input("Enter the new duration: ")
-    cursor.execute(f"UPDATE courses SET course_name = '{newName}', price = {newPrice}, duration='{newDuration}' WHERE id='{course_id}';")
-    connection.commit()
-    print(f"Course ID:{course_id} updated successfully")
+    try:
+        with connection.cursor as cursor:
+            course_id = int(input("Enter course id: "))
+
+            print(f"What do you want to update from {cursor.fetchone()}")
+    except ValueError:
+        print("Course ID must be an integer.\n")
+        return
+    
 
 def deleteCourse(connection):
     course_id = int(input("Enter course id: "))
