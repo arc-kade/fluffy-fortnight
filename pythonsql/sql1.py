@@ -68,15 +68,26 @@ def viewCourse(connection):
     except MySQLError as err:
             print(f"Database error: {err}\n")
 
+UPDATABLE_FIELDS=("course name","price","duration")
+
 def updateCourse(connection):
     try:
-        with connection.cursor as cursor:
-            course_id = int(input("Enter course id: "))
-
-            print(f"What do you want to update from {cursor.fetchone()}")
+        course_id = int(input("Enter course id: "))
     except ValueError:
-        print("Course ID must be an integer.\n")
-        return
+            print("Course ID must be an integer.\n")
+            return
+    try:
+        with connection.cursor as cursor:
+            cursor.execute(f"SELECT * FROM courses WHERE id='{course_id}';")
+            row = cursor.fetchone()
+            if row is none:
+                print(f"No course found with ID {course_id}.")
+                return
+            
+            udata = input(f"What do you want to update from {cursor.fetchone()}?\n")
+
+            
+    
     
 
 def deleteCourse(connection):
