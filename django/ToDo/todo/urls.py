@@ -16,11 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.http import HttpResponse #custom import
+from todoapp import views
 
-def TestResponse(request):
-    return HttpResponse("Hello world")
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('testresponse/',TestResponse)
+    path('',views.Home),
+    path('about/',views.About),
+    path('contact/',views.Contact)
 ]
+
+

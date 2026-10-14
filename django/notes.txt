@@ -1,0 +1,5 @@
+settings.py:
+'DIRS': [BASE_DIR/"templates"],
+
+urls.py:
+from django.shortcuts import render

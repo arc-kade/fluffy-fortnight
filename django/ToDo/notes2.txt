@@ -1,0 +1,10 @@
+python manage.py startapp <app name>
+
+
+INSTALLED_APPS
+
+app --> views --> app urls --> include project urls
+
+
+What are django apps
+how can we pass data from views to html
