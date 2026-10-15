@@ -5,6 +5,17 @@ INSTALLED_APPS
 
 app --> views --> app urls --> include project urls
 
+python manage.py runserver
 
 What are django apps
-how can we pass data from views to html
+how can we pass data from views to html: use {{<variable name in python>}} in html
+
+python manage.py makemigrations
+python manage.py migrate
+
+Download SQLite and SQLite Viewer extention 
+
+python manage.py createsuperuser
+
+ORM in django
+

@@ -11,8 +11,22 @@
             <li><a href="/">Home</a></li>
             <li><a href="/about">About Us</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li>
+                {% if status %}
+                    <li><a href="">Logout</a></li>
+                {% else %} 
+                    <li><a href="">Login</a></li>
+                    <li><a href="">Register</a></li>
+                {% endif %}
+            </li>
         </ul>
     </nav>
     <h1>ToDo List</h1>
-</body>
+    {% for row in tasks %}
+        <div> {{row.task}} : {% if row.is_completed %}Done{% else %}Incomplete {% endif %} </div>
+    {% endfor %}
+    <br>
+    <br>
+    <button>Create Task</button>
+    </body>
 </html>
