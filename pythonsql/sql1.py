@@ -141,7 +141,7 @@ def deleteCourse(connection):
 connection = create_connection()
 
 while True:
-    print("1.Add Course\n2.View Course\n3.Update Course\n4. Delete Course\n5.View All Courses \n6.Exit")
+    print("1.Add Course\n2.View Course\n3.Update Course\n4.Delete Course\n5.View All Courses \n6.Exit")
     choice = int(input("What would you like to do?\n"))
     if choice == 1:
         count = int(input("How many courses do you wish to enter?\n"))
@@ -149,13 +149,13 @@ while True:
             addCourse(connection)
         continue
     if choice == 2:
-        viewCourse()
+        viewCourse(connection)
         continue
     if choice == 3:
-        updateCourse()
+        updateCourse(connection)
         continue
     if choice == 4:
-        deleteCourse()
+        deleteCourse(connection)
     if choice == 5:
         with connection.cursor() as cursor:
             cursor.execute(f"SELECT* FROM courses")

@@ -5,7 +5,8 @@ from todoapp import views
 
 
 urlpatterns = [
-    path('',views.Home),
-    path('about/',views.About),
-    path('contact/',views.Contact)
+    path('',views.Home,name="home"),
+    path('edit-task/<int:task_id>/',views.editTask,name="edit"),
+    path('about-me/',views.About,name="about"),
+    path('contact-us/',views.Contact,name="contact")
 ]

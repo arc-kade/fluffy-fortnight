@@ -1,0 +1,1 @@
+Error: Course name and duration cannot be empty.\n

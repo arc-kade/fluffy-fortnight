@@ -9,3 +9,6 @@ class ToDos(models.Model):
 
     def __str__(self):
         return self.task
+
+# class MakeTodo(models.Model)
+    

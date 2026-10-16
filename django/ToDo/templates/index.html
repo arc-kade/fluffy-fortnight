@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <nav>
         <ul>
@@ -13,20 +15,34 @@
             <li><a href="/contact">Contact</a></li>
             <li>
                 {% if status %}
-                    <li><a href="">Logout</a></li>
-                {% else %} 
-                    <li><a href="">Login</a></li>
-                    <li><a href="">Register</a></li>
-                {% endif %}
+            <li><a href="">Logout</a></li>
+            {% else %}
+            <li><a href="">Login</a></li>
+            <li><a href="">Register</a></li>
+            {% endif %}
             </li>
         </ul>
     </nav>
     <h1>ToDo List</h1>
     {% for row in tasks %}
-        <div> {{row.task}} : {% if row.is_completed %}Done{% else %}Incomplete {% endif %} </div>
+    <div> 
+        {{row.task}} : {% if row.is_completed %}Done{% else %}Incomplete {% endif %}  
+        <a href="/edit-task/{{task_id}}">Edit</a>
+    </div>
     {% endfor %}
     <br>
     <br>
-    <button>Create Task</button>
-    </body>
+    <div class="task-form">
+        <form method="post" action="{% url 'home' %}">
+            {% csrf_token %}
+            <legend>New Task:</legend>
+            <div>
+                <input type="text" name="task_name">
+                <input type="submit" value="Add Task">
+            </div>
+
+        </form>
+    </div>
+</body>
+
 </html>

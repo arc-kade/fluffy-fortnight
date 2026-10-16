@@ -5,6 +5,11 @@ INSTALLED_APPS
 
 app --> views --> app urls --> include project urls
 
+create index.html page
+        create view and url for index
+        for the todo project, views handle GET and POST requests
+        
+
 python manage.py runserver
 
 What are django apps
