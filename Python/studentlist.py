@@ -1,6 +1,6 @@
 import copy
 
-
+SUBJECTS = 3
 students={}
 
 def read_int(prompt, minimum=None, maximum=None):
@@ -20,6 +20,13 @@ def read_int(prompt, minimum=None, maximum=None):
             continue
         return value
 
+def read_name(prompt):
+    while True:
+        name = input(prompt).strip()
+        if name:
+            return name
+        print("Name cannot be empty")
+
 def collect_students():
     studentCount = read_int("Enter the number of students: ", minimum=1)
 
@@ -28,45 +35,53 @@ def collect_students():
     markList=[]
 
     for i in range (1,studentCount+1):
-        studentName = input("Enter the name of student :")
-        nameList.append(studentName)
-        rollNumber = int(input("Enter the roll number: "))
-        rollList.append(rollNumber)
-        mathMarks = int(input("Enter marks for Maths: "))
-        # mathList.append(mathMarks)
-        scienceMarks = int(input("Enter marks for Science: "))
-        # scienceList.append(scienceMarks)
-        engMarks = int(input("Enter marks for English: "))
-        # engList.append(engMarks)
-        markList.append([mathMarks,scienceMarks,engMarks])
+        print(f"\nStudent {i}")
+        nameList.append(read_name("Name: "))
+        while True:
+            rollNumber = read_int("Enter the roll number: ", minimum=1)
+            if rollNumber in rollList:
+                print("Roll number already taken.")
+            else:
+                rollList.append(rollNumber)
+                break
+        student_marks = [
+            read_int(f"Marks in subject {s} (0-100): ", minimum=0, maximum=100)
+            for s in range(1, SUBJECTS+1)
+        ]
+        markList.append(student_marks)
+    return nameList,rollList,markList
 
-    for name, roll, marks in zip(nameList,rollList,markList):
-        students[roll]={
-            "name":name, 
-            "marks":marks
-        }
-       
-    return
+def show_dictionary(nameList, rollList):
+    print("\n Roll Number -> Name (zip)")
+    roll_name_dic = dict(zip(rollList,nameList))
+    print(roll_name_dic)
 
-
+def string_operations(nameList):
+    print("\n String operations")
     upperName = [name.upper() for name in nameList]
-    print(upperName)
+    print("Upper case names: ",upperName)
     longName = [name for name in nameList if len(name)>5]
-    print(longName)
+    print("Names longer than 5 characters: ",longName)
     a_names = [name for name in nameList if name and name[0].lower()=="a"]
-    print(a_names)
+    print("Names that start with the letter 'A': ",a_names)
 
+def list_comprehension(nameList,rollList,markList):
+    print("\nList comprehensions")
     highScoreres = [name for name, m in zip(nameList,markList) if sum(m)/len(m) > 75]
-    print(highScoreres)
+    print("Students with average marks > 75: ",highScoreres)
     evenRolls = [r for r in rollList if r%2==0]
-    print(evenRolls)
+    print("Even roll numbers: ",evenRolls)
 
-
+def tuple_and_set(markList):
+    print("\nTuple and set")
     first_marks = tuple(markList[0])
-    print(first_marks)
+    print("First student's marks: ",first_marks)
+    
     unique_marks = {m for student in markList for m in student }
-    print(unique_marks)
+    print("Unique marks for all students (set): ",unique_marks)
 
+def copy_demo(markList):
+    print("\n shallow copy vs deep copy")
     shallow = copy.copy(markList)
     deep = copy.deepcopy(markList)
 
@@ -77,3 +92,26 @@ def collect_students():
     print("Shallow copy: ", shallow)
     print("Deep copy: ", deep)
 
+def main():
+    print("Student record management system\n")
+    try:
+        nameList, rollList, markList = collect_students()
+    except (EOFError, KeyboardInterrupt):
+        print("\nInput was cancelled. Exiting.")
+        return
+    except Exception as error:
+        print(f"\nUnexpected error while reading input: {error}")
+        return
+
+    try:
+        show_dictionary(rollList, nameList)
+        string_operations(nameList)
+        list_comprehension(nameList,rollList,markList)
+        tuple_and_set(markList)
+        copy_demo(markList)
+    except Exception as error:
+        print(f"\nSomething went wrong while processring the data: {error}")
+
+
+if __name__=="__main__":
+    main()
