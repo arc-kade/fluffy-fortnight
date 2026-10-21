@@ -1,0 +1,51 @@
+Week 6
+
+
+
+Write a Python program titled Secure Log Analyzer & Backup System that reads user login records from a text file, validates them using regular expressions, processes them using functional programming techniques, and stores valid records using pickling. The program must demonstrate file handling, pickling, modules and packages, functional programming, regular expressions, decorators, and proper error handling.
+
+
+
+Each record in log.txt contains:
+
+username email login_time
+
+Example:
+
+john john123@gmail.com 10:30
+
+
+
+The program should read all records from the file, validate email format and login time (HH:MM in 24-hour format) using regular expressions, display valid records, and write invalid records into a separate file named invalid_log.txt.
+
+Use functional programming concepts:
+
+•	map() to convert usernames to uppercase
+
+•	filter() to select only valid login records
+
+•	lambda for simple transformations
+
+
+
+Create and apply a decorator that either logs execution time of a function or prints “Function started” and “Function completed” when a processing function runs.
+
+After validation, store all valid login records into a binary file using pickle, then load and display the stored data.
+
+Organize the program using modules and packages in the following structure:
+
+project/
+
+├── main.py
+
+├── file_handler.py
+
+├── validator.py
+
+├── processor.py
+
+└── utils/
+
+  └── decorator.py
+
+Keep file handling logic in one module, regex validation in another module, processing logic separately, and the decorator inside the utils package. The program must handle file-related errors properly and follow a clean modular structure.

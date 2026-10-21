@@ -1,0 +1,8 @@
+john john123@gmail.com 10:30
+alice alice@yahoo.com 23:59
+bob bob@@mail.com 09:15
+carol carol@outlook.com 25:10
+dave dave@site.org 9:45
+eve eve@example.co.in 00:00
+frank frank@gmail.com
+grace grace@mail 12:00
