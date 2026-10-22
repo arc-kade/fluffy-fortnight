@@ -24,3 +24,14 @@ python manage.py createsuperuser
 
 ORM in django
 
+
+
+
+ADDING STYLES
+in <appname>/settings.py -> last line: 
+        STATIC_URL = 'static/'
+        STATICFILES_DIRS=[BASE_DIR/"static"]
+
+Create a static folder in the same later as manage.py
+in static folder, create css folder
+in css folder create styles.css

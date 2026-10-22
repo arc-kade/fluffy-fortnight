@@ -19,12 +19,22 @@ def editTask(request,task_id):
     task_detail=ToDos.objects.get(id=task_id) #column
     if request.method=="POST":
         task_data=request.POST['task_name'] #value
+        status = request.POST.get('status',False)
+        if status:
+            task_detail.is_completed=status.capitalize()
+
+        else:
+            task_detail.is_completed=status
+
         task_detail.task=task_data #object.column= value
         task_detail.save()
         return redirect("/")
-        
     return render(request,"edit-task.html",{"my_task":task_detail})
 
+def deleteTask(request,task_id):
+    task = ToDos.objects.get(id=task_id)
+    task.delete() #built-in function
+    return redirect("/")
 
 def TestResponse(request):
     return HttpResponse("Hello world")
