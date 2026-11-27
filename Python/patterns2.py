@@ -15,28 +15,44 @@
 # custom=[]
 # missing=[]
 # for i in range(1,n+1):
-#     order.append(i)
 #     e = int(input("Enter the number: "))
 #     custom.append(e)
 
 # for i in range(n):
+#     for j in range(n-i-1):
+#         if custom[j]>custom[j+1]:
+#             custom[j],custom[j+1]=custom[j+1],custom[j]
+
+# for i in range(custom[0],custom[n-1]+1):
+#     order.append(i)
+
+# for i in range(len(order)):
 #     if order[i] not in custom:
-#         missing.append(i)
-# print(order)
-# print(custom)
-# print(missing)
+#         missing.append(order[i])
+
 # print("Missing numbers are: ", missing)
 
-# n=int(input("Enter starting number: "))
-# prime=[]
-# while len(prime)<3:
-#     for i in range(2,n//2):
-#         if n%i!=0:
-#             prime.append(n)
-        
-#     n+=1
+n=int(input("Enter starting number: "))
+prime=[]
+while len(prime)<3:
+    i=2
+    is_prime=True
+    if n>2:
+        is_prime=False
 
-# print(prime)
+    for i in range(2,int(n**0.5)+1):
+        if n%i==0:
+            is_prime=False
+            break
+    if is_prime:
+        prime.append(n)
+        n+=1
+    else:
+        
+        n+=1
+
+
+print(prime)
 
 # rows=int(input("Enter the rows: "))
 # col=int(input("Enter the columns: "))
